@@ -23,6 +23,7 @@ buff-statusline.nvim statusline
 ## Requirements
 
 - Neovim 0.X
+- TODO: 'airblade/vim-gitgutter'
 
 ## Installation
 
