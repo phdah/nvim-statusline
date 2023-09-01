@@ -28,31 +28,42 @@ M.setup = function(user_opts)
         if user_opts.lines == nil then user_opts.lines = true end
         if user_opts.keymaps == nil then user_opts.keymaps = true end
 
+        -- Set default colors
+        if user_opts.colors == nil then user_opts.colors = {} end
+        if user_opts.colors.git == nil then user_opts.colors.git = "CursorColumn" end
+        if user_opts.colors.filename == nil then user_opts.colors.filename = "LineNr" end
+        if user_opts.colors.buffers == nil then user_opts.colors.buffers = "CursorColumn" end
+        if user_opts.colors.lines == nil then user_opts.colors.lines = "CursorColumn" end
+
+        if user_opts.colors.clear == nil then user_opts.colors.clear = "LineNr" end
+
         -- Git and path/file name
         if user_opts.git then
-            vim.o.statusline = '%#CursorColumn#%{v:lua.require("buff-statusline").nvim_StatuslineGit()}%{v:lua.require("buff-statusline").nvim_GitStatus()}%#LineNr#'
+            vim.o.statusline = '%#' .. user_opts.colors.git .. '#%{v:lua.require("buff-statusline").nvim_StatuslineGit()}%{v:lua.require("buff-statusline").nvim_GitStatus()}'
+            vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.clear .. '#'
         end
 
         -- Filename
         if user_opts.filename then
-            vim.o.statusline = vim.o.statusline .. ' %f%m'
+            vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.filename .. '# %f%m'
+            vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.clear .. '#'
         end
 
         -- Buffers
         if user_opts.buffers then
             vim.o.statusline = vim.o.statusline .. '%='
-            vim.o.statusline = vim.o.statusline .. '%{v:lua.require("buff-statusline").nvim_Buffer_lower()}%#CursorColumn#[ %{v:lua.require("buff-statusline").nvim_Buffer_current()} ]%#LineNr#%{v:lua.require("buff-statusline").nvim_Buffer_upper()}'
-        end
-
-        -- File format
-        if user_opts.file_format then
-            vim.o.statusline = vim.o.statusline .. '%='
+            vim.o.statusline = vim.o.statusline .. '%{v:lua.require("buff-statusline").nvim_Buffer_lower()}%#' .. user_opts.colors.buffers .. '#[ %{v:lua.require("buff-statusline").nvim_Buffer_current()} ]%#' .. user_opts.colors.clear .. '#%{v:lua.require("buff-statusline").nvim_Buffer_upper()}'
+            vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.clear .. '#'
         end
 
         -- Lines
         if user_opts.lines then
-            vim.o.statusline = vim.o.statusline .. '%#CursorColumn# %y %{&fileencoding?&fileencoding:&encoding}[%{&fileformat}] %p%% %l:%c'
+            vim.o.statusline = vim.o.statusline .. '%='
+            vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.lines .. '# %y %{&fileencoding?&fileencoding:&encoding}[%{&fileformat}] %p%% %l:%c'
         end
+
+        -- Clear all colors
+        vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.clear .. '#'
 
         -- Buffer control related to nvim_Cbuffer_number
         if user_opts.keymaps then
