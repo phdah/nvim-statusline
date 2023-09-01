@@ -35,3 +35,22 @@ and in your `init.lua``, put
 ````lua
 require('buff-statusline.nvim').setup()
 ````
+
+For adding configs, copy these default
+````lua
+require('buff-statusline').setup({
+    enable = true,         -- Enables the entire statusline
+    git = true,            -- Enables the git status
+    filename = true,       -- Enables showing the filename
+    buffers = true,        -- Enables showing the buffers
+    lines = true,          -- Enables showing line details
+    keymaps = true,        -- Enables the keymaps for buffer switching
+    colors = {
+        git = "CursorColumn",      -- Color for git related status
+        filename = "CursorColumn", -- Color for filename
+        buffers = "CursorColumn",  -- Color for buffers
+        lines = "LineNr"           -- Color for line details
+        clear = "LineNr"           -- Color between fields
+    }
+})
+````
