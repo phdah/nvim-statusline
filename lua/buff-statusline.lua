@@ -1,11 +1,10 @@
+require('modules/cbuffer')
+
 local M = {}
 
 local git = require('modules/git')
 M.nvim_StatuslineGit = git.nvim_StatuslineGit
 M.nvim_GitStatus = git.nvim_GitStatus
-
-local cbuff = require('modules/cbuffer')
-M.nvim_Cbuffer_number = cbuff.nvim_Cbuffer_number
 
 local lbuff = require('modules/buffer_list')
 M.nvim_Buffer_lower = lbuff.nvim_Buffer_lower
@@ -62,15 +61,15 @@ M.setup = function(user_opts)
 
         -- Buffer control related to nvim_Cbuffer_number
         if user_opts.keymaps then
-            vim.api.nvim_set_keymap('n', '<leader>1', ':lua vim.cmd("b" .. require("buff-statusline").nvim_Cbuffer_number(1))<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>2', ':lua vim.cmd("b" .. require("buff-statusline").nvim_Cbuffer_number(2))<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>3', ':lua vim.cmd("b" .. require("buff-statusline").nvim_Cbuffer_number(3))<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>4', ':lua vim.cmd("b" .. require("buff-statusline").nvim_Cbuffer_number(4))<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>5', ':lua vim.cmd("b" .. require("buff-statusline").nvim_Cbuffer_number(5))<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>6', ':lua vim.cmd("b" .. require("buff-statusline").nvim_Cbuffer_number(6))<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>7', ':lua vim.cmd("b" .. require("buff-statusline").nvim_Cbuffer_number(7))<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>8', ':lua vim.cmd("b" .. require("buff-statusline").nvim_Cbuffer_number(8))<CR>', { noremap = true, silent = true })
-            vim.api.nvim_set_keymap('n', '<leader>9', ':lua vim.cmd("b" .. require("buff-statusline").nvim_Cbuffer_number(9))<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>1', ':Cbuffernumber 1<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>2', ':Cbuffernumber 2<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>3', ':Cbuffernumber 3<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>4', ':Cbuffernumber 4<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>5', ':Cbuffernumber 5<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>6', ':Cbuffernumber 6<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>7', ':Cbuffernumber 7<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>8', ':Cbuffernumber 8<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>9', ':Cbuffernumber 9<CR>', { noremap = true, silent = true })
         end
 
     end
