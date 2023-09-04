@@ -6,42 +6,47 @@ COLOR.set_colors = function(user_opts)
 
     -- Git color
     if user_opts.colors.git == nil then
-        user_opts.colors.git = "CursorColumn"
+        user_opts.colors.git = {}
+        user_opts.colors.git.color = "CursorColumn"
     else
-        vim.cmd(string.format("hi CustomGitColor ctermbg=%s", user_opts.colors.git))
-        user_opts.colors.git = "CustomGitColor"
+        vim.cmd(string.format("hi CustomGitColor ctermbg=%s ctermfg=%s", user_opts.colors.git.bg, user_opts.colors.git.fg))
+        user_opts.colors.git.color = "CustomGitColor"
     end
 
     -- Filename color
     if user_opts.colors.filename == nil then
-        user_opts.colors.filename = "LineNr"
+        user_opts.colors.filename = {}
+        user_opts.colors.filename.color = "LineNr"
     else
-        vim.cmd(string.format("hi CustomFilenameColor ctermbg=%s", user_opts.colors.filename))
-        user_opts.colors.filename = "CustomFilenameColor"
+        vim.cmd(string.format("hi CustomFilenameColor ctermbg=%s ctermfg=%s", user_opts.colors.filename.bg, user_opts.colors.filename.fg))
+        user_opts.colors.filename.color = "CustomFilenameColor"
     end
 
     -- Buffers color
     if user_opts.colors.buffers == nil then
-        user_opts.colors.buffers = "CursorColumn"
+        user_opts.colors.buffers = {}
+        user_opts.colors.buffers.color = "CursorColumn"
     else
-        vim.cmd(string.format("hi CustomBuffersColor ctermbg=%s", user_opts.colors.buffers))
-        user_opts.colors.buffers = "CustomBuffersColor"
+        vim.cmd(string.format("hi CustomBuffersColor ctermbg=%s ctermfg=%s", user_opts.colors.buffers.bg, user_opts.colors.buffers.fg))
+        user_opts.colors.buffers.color = "CustomBuffersColor"
     end
 
     -- Lines color
     if user_opts.colors.lines == nil then
-        user_opts.colors.lines = "CursorColumn"
+        user_opts.colors.lines = {}
+        user_opts.colors.lines.color = "CursorColumn"
     else
-        vim.cmd(string.format("hi CustomLinesColor ctermbg=%s", user_opts.colors.lines))
-        user_opts.colors.lines = "CustomLinesColor"
+        vim.cmd(string.format("hi CustomLinesColor ctermbg=%s ctermfg=%s", user_opts.colors.lines.bg, user_opts.colors.lines.fg))
+        user_opts.colors.lines.color = "CustomLinesColor"
     end
 
     -- Clear color
     if user_opts.colors.clear == nil then
-        user_opts.colors.clear = "LineNr"
+        user_opts.colors.clear = {}
+        user_opts.colors.clear.color = "LineNr"
     else
-        vim.cmd(string.format("hi CustomClearColor ctermbg=%s", user_opts.colors.clear))
-        user_opts.colors.clear = "CustomClearColor"
+        vim.cmd(string.format("hi CustomClearColor ctermbg=%s ctermfg=%s", user_opts.colors.clear.bg, user_opts.colors.clear.fg))
+        user_opts.colors.clear.color = "CustomClearColor"
     end
 
     return user_opts.colors
