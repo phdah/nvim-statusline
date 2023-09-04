@@ -47,13 +47,31 @@ require('buff-statusline').setup({
     buffers = true,        -- Enables showing the buffers
     lines = true,          -- Enables showing line details
     keymaps = true,        -- Enables the keymaps for buffer switching
-    colors = {
-        git = "CursorColumn",      -- Color for git related status
-        filename = "CursorColumn", -- Color for filename
-        buffers = "CursorColumn",  -- Color for buffers
-        lines = "LineNr"           -- Color for line details
-        clear = "LineNr"           -- Color between fields
-    }
+    -- Colors can be set for each object, and both foreground and background
+    -- using a 256-color palette
+    -- TODO: Fix such one can use hexcodes
+    -- colors = {
+    --     git = {
+    --         fg = "59",
+    --         bg = "1",
+    --     },
+    --     filename = {
+    --         fg = "59",
+    --         bg = "1",
+    --     },
+    --     buffers = {
+    --         fg = "59",
+    --         bg = "100",
+    --     },
+    --     lines = {
+    --         fg = "242",
+    --         bg = "100",
+    --     },
+    --    clear = {
+    --         fg = "59",
+    --         bg = "59",
+    --     },
+    -- }
 })
 ````
 
