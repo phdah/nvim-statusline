@@ -77,6 +77,6 @@ require('buff-statusline').setup({
 
 For moving between buffers, use the default `<leader>1` to jump to buffer `1` in the buffer list. For setting own keymaps, disable them in the `setup()`, and set them to what you want using
 ````lua
-vim.api.nvim_set_keymap('n', '<YOUR_KEYMAP>', ':lua vim.cmd("b" .. require("buff-statusline").nvim_Cbuffer_number(<THE_BUFFER_NR>))<CR>')
+vim.api.nvim_set_keymap('n', '<leader><THE_BUFFER_NR>', ':Cbuffernumber <THE_BUFFER_NR><CR>')
 ````
 for each buffer number.
