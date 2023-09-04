@@ -12,6 +12,7 @@ M.nvim_Buffer_lower = lbuff.nvim_Buffer_lower
 M.nvim_Buffer_upper = lbuff.nvim_Buffer_upper
 M.nvim_Buffer_current = lbuff.nvim_Buffer_current
 
+local color = require('modules/color')
 
 M.setup = function(user_opts)
     -- Set default values if not provided
@@ -29,13 +30,7 @@ M.setup = function(user_opts)
         if user_opts.keymaps == nil then user_opts.keymaps = true end
 
         -- Set default colors
-        if user_opts.colors == nil then user_opts.colors = {} end
-        if user_opts.colors.git == nil then user_opts.colors.git = "CursorColumn" end
-        if user_opts.colors.filename == nil then user_opts.colors.filename = "LineNr" end
-        if user_opts.colors.buffers == nil then user_opts.colors.buffers = "CursorColumn" end
-        if user_opts.colors.lines == nil then user_opts.colors.lines = "CursorColumn" end
-
-        if user_opts.colors.clear == nil then user_opts.colors.clear = "LineNr" end
+        user_opts.colors = color.set_colors(user_opts)
 
         -- Git and path/file name
         if user_opts.git then
