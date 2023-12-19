@@ -24,6 +24,7 @@ nvim-statusline statusline
 
 - Neovim 0.X
 - TODO: 'airblade/vim-gitgutter'
+- Require `set termguicolors`
 
 ## Installation
 
@@ -48,29 +49,29 @@ require('nvim-statusline').setup({
     lines = true,          -- Enables showing line details
     keymaps = true,        -- Enables the keymaps for buffer switching
     -- Colors can be set for each object, and both foreground and background
-    -- using a 256-color palette
-    -- TODO: Fix such one can use hexcodes
-    -- colors = {
-    --     git = {
-    --         fg = "59",
-    --         bg = "1",
-    --     },
-    --     filename = {
-    --         fg = "59",
-    --         bg = "1",
-    --     },
-    --     buffers = {
-    --         fg = "59",
-    --         bg = "100",
-    --     },
-    --     lines = {
-    --         fg = "242",
-    --         bg = "100",
-    --     },
-    --    clear = {
-    --         fg = "59",
-    --         bg = "59",
-    --     },
+    -- using hex colors
+    colors = {
+        git = {
+            fg = "#D8DEE9",
+            bg = "#4C566A",
+        },
+        filename = {
+            fg = "#D8DEE9",
+            bg = "#4C566A",
+        },
+        buffers = {
+            fg = "#D8DEE9",
+            bg = "#4C566A",
+        },
+        lines = {
+            fg = "#D8DEE9",
+            bg = "#4C566A",
+        },
+        clear = {
+            fg = "#D8DEE9",
+            bg = "#2E3440",
+        },
+    },
     -- }
 })
 ````
