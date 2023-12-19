@@ -33,7 +33,7 @@ M.setup = function(user_opts)
 
         -- Git and path/file name
         if user_opts.git then
-            vim.o.statusline = '%#' .. user_opts.colors.git.color .. '#%{v:lua.require("buff-statusline").nvim_StatuslineGit()}%{v:lua.require("buff-statusline").nvim_GitStatus()}'
+            vim.o.statusline = '%#' .. user_opts.colors.git.color .. '#%{v:lua.require("nvim-statusline").nvim_StatuslineGit()}%{v:lua.require("nvim-statusline").nvim_GitStatus()}'
             vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.clear.color .. '#'
         end
 
@@ -46,7 +46,7 @@ M.setup = function(user_opts)
         -- Buffers
         if user_opts.buffers then
             vim.o.statusline = vim.o.statusline .. '%='
-            vim.o.statusline = vim.o.statusline .. '%{v:lua.require("buff-statusline").nvim_Buffer_lower()}%#' .. user_opts.colors.buffers.color .. '#[ %{v:lua.require("buff-statusline").nvim_Buffer_current()} ]%#' .. user_opts.colors.clear.color .. '#%{v:lua.require("buff-statusline").nvim_Buffer_upper()}'
+            vim.o.statusline = vim.o.statusline .. '%{v:lua.require("nvim-statusline").nvim_Buffer_lower()}%#' .. user_opts.colors.buffers.color .. '#[ %{v:lua.require("nvim-statusline").nvim_Buffer_current()} ]%#' .. user_opts.colors.clear.color .. '#%{v:lua.require("nvim-statusline").nvim_Buffer_upper()}'
             vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.clear.color .. '#'
         end
 

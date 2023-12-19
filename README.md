@@ -1,5 +1,5 @@
 <h1 align="center">
-  buff-statusline.nvim
+  nvim-statusline
 </h1>
 <p align="center">
 A simple, minimalistic, easily navigated and anti-bloat buffer statusline.
@@ -9,15 +9,15 @@ A simple, minimalistic, easily navigated and anti-bloat buffer statusline.
 Standard statusline
 </p>
 
-![Demo Image](https://github.com/phdah/buff-statusline.nvim/raw/main/images/clean.png)
+![Demo Image](https://github.com/phdah/nvim-statusline/raw/main/images/clean.png)
 <p align="center">
-buff-statusline.nvim statusline
+nvim-statusline statusline
 </p>
 
-![Demo Image](https://github.com/phdah/buff-statusline.nvim/raw/main/images/demo.png)
+![Demo Image](https://github.com/phdah/nvim-statusline/raw/main/images/demo.png)
 
 <!-- badges: start -->
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/phdah/buff-statusline.nvim/blob/main/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/phdah/nvim-statusline/blob/main/LICENSE)
 <!-- badges: end -->
 
 ## Requirements
@@ -29,18 +29,18 @@ buff-statusline.nvim statusline
 
 Use your favorite package manager, e.g., `packer`:
 ````lua
-use {'phdah/buff-statusline.nvim'}
+use {'phdah/nvim-statusline'}
 ````
 and in your `init.lua`, put
 ````lua
-require('buff-statusline.nvim').setup()
+require('nvim-statusline').setup()
 ````
 
 ## Configurations
 
 For adding configs, copy these default
 ````lua
-require('buff-statusline').setup({
+require('nvim-statusline').setup({
     enable = true,         -- Enables the entire statusline
     git = true,            -- Enables the git status
     filename = true,       -- Enables showing the filename
