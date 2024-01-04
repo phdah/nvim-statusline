@@ -39,7 +39,7 @@ M.setup = function(user_opts)
 
         -- Filename
         if user_opts.filename then
-            vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.filename.color .. '# %f%m'
+            vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.filename.color .. '# %t%m'
             vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.clear.color .. '#'
         end
 
