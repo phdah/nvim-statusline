@@ -1,5 +1,5 @@
 <h1 align="center">
-  nvim-statusline (0.1.0-beta)
+  nvim-statusline (0.2.0-beta)
 </h1>
 <p align="center">
 A simple, minimalistic, easily navigated and anti-bloat buffer statusline.
