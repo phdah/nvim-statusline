@@ -4,7 +4,6 @@ local M = {}
 
 local git = require('modules/git')
 M.nvim_StatuslineGit = git.nvim_StatuslineGit
-M.nvim_GitStatus = git.nvim_GitStatus
 
 local lbuff = require('modules/buffer_list')
 M.nvim_Buffer_lower = lbuff.nvim_Buffer_lower
@@ -33,7 +32,7 @@ M.setup = function(user_opts)
 
         -- Git and path/file name
         if user_opts.git then
-            vim.o.statusline = '%#' .. user_opts.colors.git.color .. '#%{v:lua.require("nvim-statusline").nvim_StatuslineGit()}%{v:lua.require("nvim-statusline").nvim_GitStatus()}'
+            vim.o.statusline = '%#' .. user_opts.colors.git.color .. '#%{v:lua.require("nvim-statusline").nvim_StatuslineGit()}'
             vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.clear.color .. '#'
         end
 

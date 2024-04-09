@@ -23,8 +23,10 @@ nvim-statusline statusline
 ## Requirements
 
 - Neovim 0.X
-- TODO: 'airblade/vim-gitgutter'
-- Require `set termguicolors`
+- `git`
+
+If you want to set your own colors, you also need
+- `set termguicolors` in your config
 
 ## Installation
 
