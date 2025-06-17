@@ -42,6 +42,9 @@ M.setup = function(user_opts)
             vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.clear.color .. '#'
         end
 
+        vim.o.statusline = vim.o.statusline .. ' %#' .. user_opts.colors.git.color .. '#%{v:lua.require("lazydbrix").status()}'
+        vim.o.statusline = vim.o.statusline .. '%#' .. user_opts.colors.clear.color .. '#'
+
         -- Buffers
         if user_opts.buffers then
             vim.o.statusline = vim.o.statusline .. '%='
