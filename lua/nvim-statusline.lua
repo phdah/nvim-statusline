@@ -1,18 +1,18 @@
-require('modules/cbuffer')
+require('nvim-statusline.modules.cbuffer')
 
 local M = {}
 
 local _opts = {}
 
-local git = require('modules/git')
+local git = require('nvim-statusline.modules.git')
 M.nvim_StatuslineGit = git.nvim_StatuslineGit
 
-local lbuff = require('modules/buffer_list')
+local lbuff = require('nvim-statusline.modules.buffer_list')
 M.nvim_Buffer_lower = lbuff.nvim_Buffer_lower
 M.nvim_Buffer_upper = lbuff.nvim_Buffer_upper
 M.nvim_Buffer_current = lbuff.nvim_Buffer_current
 
-local color = require('modules/color')
+local color = require('nvim-statusline.modules.color')
 
 M.render = function()
     local opts = _opts
